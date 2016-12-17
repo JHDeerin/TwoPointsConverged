@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{14A9602A-EA8D-95A9-22FB-6D5A006E86B1}") = "Two Points Converged", "Assembly-CSharp.csproj", "{B5A1070D-E8A5-1FDF-EA9B-192A0C7978D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A1070D-E8A5-1FDF-EA9B-192A0C7978D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A1070D-E8A5-1FDF-EA9B-192A0C7978D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A1070D-E8A5-1FDF-EA9B-192A0C7978D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A1070D-E8A5-1FDF-EA9B-192A0C7978D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
