@@ -7,12 +7,12 @@ public class PlayerControl : MonoBehaviour {
 	public float jumpForce;
 	public LayerMask groundColliders;
 	public Transform groundedCheck;
+	public GameObject tetherMark;
 
 	public bool grounded;
 	private Rigidbody2D rb;
 
-	public List<GameObject> clickedObjects;
-	public List<Vector3> localClickPos;
+	public List<TempTetherMark> tetherMarks;
 
 	private bool jumping;
 
@@ -20,8 +20,7 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
-		clickedObjects = new List<GameObject>();
-		localClickPos = new List<Vector3>();
+		tetherMarks = new List<TempTetherMark>();
 
 		grounded = false;
 		jumping = false;
@@ -36,19 +35,28 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 			if (hit.collider != null) {
-				clickedObjects.Add(hit.collider.gameObject);
-				localClickPos.Add(hit.collider.gameObject.transform.InverseTransformPoint(hit.point));
+				TempTetherMark mark = ((GameObject) Instantiate(tetherMark, hit.point, Quaternion.identity)).GetComponent<TempTetherMark>();
+				mark.clickedObject = hit.collider.gameObject;
+				mark.localClickedPos = mark.clickedObject.transform.InverseTransformPoint(hit.point);
+				mark.transform.parent = mark.clickedObject.transform;
+				tetherMarks.Add(mark);
 			}
 
-			if(clickedObjects.Count > 1) {
-				TetheredObjects.main.addObject(clickedObjects[0], localClickPos[0], clickedObjects[1], localClickPos[1]);
-				clickedObjects.Clear();
-				localClickPos.Clear();
+			if(tetherMarks.Count > 1) {
+				TetheredObjects.main.addObject(tetherMarks[0].clickedObject, tetherMarks[0].localClickedPos, tetherMarks[1].clickedObject, tetherMarks[1].localClickedPos);
+				foreach (TempTetherMark t in tetherMarks) {
+					Destroy(t.gameObject);
+				}
+				tetherMarks.Clear();
 			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			TetheredObjects.main.removeAll();
+			foreach (TempTetherMark t in tetherMarks) {
+				Destroy(t.gameObject);
+			}
+			tetherMarks.Clear();
 		}
 	}
 	

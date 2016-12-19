@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DragableObject.cs" />
+     <Compile Include="Assets\LevelEndPortal.cs" />
+     <Compile Include="Assets\LoadNextLevel.cs" />
      <Compile Include="Assets\PlayerControl.cs" />
+     <Compile Include="Assets\TempTetherMark.cs" />
      <Compile Include="Assets\TetheredObjects.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -11,7 +11,6 @@ public class DragableObject {
 	public void tetherForce(float forceAmt) {
 		Vector2 forceDir = to2D(Vector3.Normalize(pairedObject.attachedObject.transform.TransformPoint(pairedObject.localForcePos) 
 			- attachedObject.transform.TransformPoint(localForcePos)));
-		Debug.Log("Force direction: " + forceDir);
 		if (attachedObject.GetComponent<Rigidbody2D>() != null) {
 			attachedObject.GetComponent<Rigidbody2D>().AddForceAtPosition(
 				forceDir * forceAmt, attachedObject.transform.TransformPoint(localForcePos));

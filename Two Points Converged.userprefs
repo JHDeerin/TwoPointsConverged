@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LoadNextLevel.cs">
+    <Files>
+      <File FileName="Assets\PlayerControl.cs" Line="59" Column="24" />
+      <File FileName="Assets\DragableObject.cs" Line="13" Column="63" />
+      <File FileName="Assets\TetheredObjects.cs" Line="35" Column="45" />
+      <File FileName="Assets\TempTetherMark.cs" Line="4" Column="46" />
+      <File FileName="Assets\LoadNextLevel.cs" Line="10" Column="15" />
+      <File FileName="Assets\LevelEndPortal.cs" Line="6" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
