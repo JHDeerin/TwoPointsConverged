@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 	public float horizontalSpeed;
@@ -57,6 +58,10 @@ public class PlayerControl : MonoBehaviour {
 				Destroy(t.gameObject);
 			}
 			tetherMarks.Clear();
+		}
+
+		if (transform.position.y < -75f) {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 	
